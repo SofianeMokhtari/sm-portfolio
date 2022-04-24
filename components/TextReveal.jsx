@@ -39,6 +39,14 @@ const TextReveal = ({textValue}) => {
                     </motion.label>
                 )
             })}
+            < br/>
+            {textValue[2].split("").map((char, index) => {
+                return (
+                    <motion.label style={{fontSize:"15px", color:"#5cccff", fontWeight:"bold"}} key={char + "-" + index} variants={letters}>
+                        {char}
+                    </motion.label>
+                )
+            })}
         </motion.div>
     )
 }

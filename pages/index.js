@@ -20,7 +20,7 @@ export default function Home() {
       <Flex id="accueil" justifyContent="center" position="relative" top="15%" alignItems="center">
         <Wrap>
           <Box>
-            <TextReveal textValue={["MOKHTARI Sofiane", "Développeur frontend"]}/>
+            <TextReveal textValue={["MOKHTARI Sofiane", "Développeur frontend", "En cours de développement"]}/>
             <Box p="25px">
             <Stack direction='row' spacing={4}>
               <Button rightIcon={<ArrowForwardIcon />} colorScheme='black' variant='outline'>
@@ -40,7 +40,7 @@ export default function Home() {
       </Flex>  
       <Waves/>    
     </Flex>        
-    <Me />
+    {/* <Me /> */}
     </>
 
   )
