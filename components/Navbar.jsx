@@ -9,11 +9,12 @@ import {
     useColorModeValue,
     useColorMode,
     Stack,
-    Avatar
+    Avatar,
+    useMediaQuery
   } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
   
-  const Links = [{text:'Mon expérience', url: "#experience"}, {text:'Mes projets', url: "#project"}, {text: 'Me contacter', url: "#contact"}];
+  const Links = [{text:'Mon expérience', url: "/#experience"}, {text:'Mes projets', url: "/#project"}, {text: 'Me contacter', url: "/#contact"}];
   
   const NavLink = ({ children, url }) => (
     <Link
@@ -32,20 +33,24 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
 const Nav = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { colorMode, toggleColorMode } = useColorMode();
+    
+    const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
   
     return (
       <>
         <Box bg={useColorModeValue('#00B0FF', 'blue.200')} px={4} position="fixed" w="100%" zIndex="1">
-          <Flex h={16} alignItems={'center'} justifyContent={{ md: 'space-between', sm: 'space-around'}}>
-            <NavLink url="#">
-                <Avatar
-                  className="nav-avatar"
-                  size={'sm'}
-                  src={
-                    '/images/sofiane-mokhtari.jpg'
-                  }
-                />
-            </NavLink>
+          <Flex h={16} alignItems={'center'} justifyContent="space-between">
+            {isLargerThan1000 && 
+              <NavLink url="#">
+                  <Avatar
+                    className="nav-avatar"
+                    size={'sm'}
+                    src={
+                      '/images/sofiane-mokhtari.jpg'
+                    }
+                  />
+              </NavLink>
+            }
           
             <IconButton
               size={'md'}
@@ -75,7 +80,7 @@ const Nav = () => {
             <Box pb={4} display={{ md: 'none' }}>
               <Stack as={'nav'} spacing={4}>
                 {Links.map((link) => (
-                  <NavLink key={link}>{link}</NavLink>
+                  <NavLink key={link.text} url={link.url}>{link.text}</NavLink>
                 ))}
               </Stack>
             </Box>

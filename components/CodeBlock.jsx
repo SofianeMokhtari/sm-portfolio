@@ -21,11 +21,11 @@ const CodePresentation = () => {
       export default Presentation`
 
     return (
-        <Box w="575px" ml="175px">
+        <Box w="575px" padding="20px">
             <CopyBlock
+                showLineNumbers={false}
                 text={code}
                 language="jsx"
-                wrapLines
                 theme={theme}
                 codeBlock
             />
