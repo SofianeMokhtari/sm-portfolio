@@ -10,7 +10,7 @@ const NotFound = ({}) => {
       <>
         <Nav />
         <Flex bg={bgColor} h="100vh" justifyContent="center" alignItems="center">
-            <Icon as={WarningIcon} colorScheme="black" variant="outline" padding="2" boxSize={150} />
+            <Icon as={WarningIcon} variant="outline" padding="2" boxSize={150} />
             <Text fontSize="6xl" color={color} ml="35px">
                 La page n'existe pas
             </Text>
