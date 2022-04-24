@@ -1,0 +1,92 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat";
+  scroll-behavior: smooth;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.custom-shape-divider-bottom-1650640188 {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1650640188 svg {
+  position: relative;
+  display: block;
+  width: calc(142% + 1.3px);
+  height: 354px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1650640188 .shape-fill {
+  fill: #00B0FF;
+}
+
+#shape1 {
+  animation: movingWater2 6s infinite alternate;
+}
+
+#shape2 {
+  animation: movingWater 5s infinite alternate;
+}
+
+#shape3 {
+  animation: movingWater3 4s infinite alternate;
+}
+
+.nav-avatar {
+  animation: 
+}
+
+@keyframes avatarScroll {
+  from {
+    transform: scale(9);
+    position: relative;
+    top: 250px;
+    left: 150px;
+  } to {
+    transform: scale(9);
+    position: relative;
+    top: 250px;
+    left: 150px;
+  }
+}
+
+
+@keyframes movingWater {
+  from {
+    transform: translateX(25%)
+  } to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes movingWater2 {
+  from {
+    transform: translateX(0%)
+  } to {
+    transform: translateX(25%);
+  }
+}
+
+
+@keyframes movingWater3 {
+  from {
+    transform: translateX(0%)
+  } to {
+    transform: translateX(30%);
+  }
+}
+
