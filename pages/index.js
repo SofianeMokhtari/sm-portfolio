@@ -5,7 +5,6 @@ import TextReveal from '../components/TextReveal'
 import CodePresentation from "../components/CodeBlock"
 import Nav from "../components/Navbar"
 import Me from "../components/Me"
-import { useEffect, useState } from 'react'
 
 //import styles from '../styles/Home.module.css'
 
@@ -14,13 +13,7 @@ export default function Home() {
   const borderColor = useColorModeValue("black", "white")
   const [isLargerThan1000] = useMediaQuery('(min-width: 1000px)')
 
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-      setMounted(true)
-  }, [])
-
   return (
-    mounted &&
     <>
       <Flex bg={color} w="100%" h="100vh" display="flex"
         flexDirection="column"
