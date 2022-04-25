@@ -13,11 +13,14 @@ import {
     useMediaQuery
   } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { MotionAvatar, MotionLink } from './Motion';
   
   const Links = [{text:'Mon expérience', url: "/#experience"}, {text:'Mes projets', url: "/#project"}, {text: 'Me contacter', url: "/#contact"}];
   
   const NavLink = ({ children, url }) => (
-    <Link
+    <MotionLink
+        whileHover={{ scale: 1.2, textDecoration: "underline" }}
+        whileTap={{ scale: 1.1, textDecoration: "underline" }}
         color="white"
         px={2}
         py={1}
@@ -27,7 +30,7 @@ import { HamburgerIcon, CloseIcon, MoonIcon, SunIcon } from '@chakra-ui/icons';
         }}
         href={`${url}`}>
       {children}
-    </Link>
+    </MotionLink>
   );
   
 const Nav = () => {
@@ -42,7 +45,9 @@ const Nav = () => {
           <Flex h={16} alignItems={'center'} justifyContent="space-between">
             {isLargerThan1000 && 
               <NavLink url="#">
-                  <Avatar
+                  <MotionAvatar
+                    whileHover={{scale: 1.1}}
+                    whileTap={{ rotate: 360, transition: { duration: 0.8 } }}
                     className="nav-avatar"
                     size={'sm'}
                     src={

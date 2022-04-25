@@ -26,7 +26,7 @@ a {
   position: relative;
   display: block;
   width: calc(142% + 1.3px);
-  height: 354px;
+  height: 275px;
   transform: rotateY(180deg);
 }
 
